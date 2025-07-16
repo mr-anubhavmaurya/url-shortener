@@ -5,6 +5,7 @@ const PORT = 8000;
 const urlRoute = require("./routes/url");
 const { connectMongoDB } = require("./connection");
 const staticRoute = require("./routes/staticRouter")
+const userRoute = require("./routes/user")
 
 //DB connection
 connectMongoDB("mongodb://localhost:27017/short-url").then(() => {
@@ -19,6 +20,7 @@ app.set("views", path.resolve("./views"));
 //routes
 app.use("/url", urlRoute);
 app.use("/", staticRoute);
+app.use("/user", userRoute);
 
 app.listen(PORT, () => {
   console.log(`server started @ PORT:${PORT}`);
