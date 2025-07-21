@@ -26,5 +26,5 @@ app.use("/", checkAuth,staticRoute);
 app.use("/user", userRoute);
 
 app.listen(PORT, () => {
-  console.log(`server started @ PORT:${PORT}`);
+  console.log(`server started http://localhost:${PORT}`);
 });
